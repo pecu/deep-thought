@@ -40,6 +40,8 @@
         <div class="col-xl-9 mx-auto">
           <h1 class="mb-5">Applying Blockchain to Trace Your Sustainable Portfolio!</h1>
         </div>
+
+        <div class="row">
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form action="searchresultpage/index.php" method="POST"> <!--action="" method = "POST"-->
             <div class="form-row">
@@ -52,8 +54,9 @@
             </div>
           </form>
 	</div>
+  <div>
 
-	
+	<div class = "row">
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form action="searchresultpage/teacher.php" method="POST"> <!--action="" method = "POST"-->
             <div class="form-row">
@@ -66,6 +69,10 @@
             </div>
           </form>
         </div>
+
+  </div>
+
+  <div class = "row">
 
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form action="searchresultpage/assist.php" method="POST"> <!--action="" method = "POST"-->
@@ -83,6 +90,7 @@
       </div>
     </div>
   </header>
+</div>
 
   <!-- Icons Grid -->
   <!--<section class="features-icons bg-light text-center">
