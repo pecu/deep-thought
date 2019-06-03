@@ -31,7 +31,7 @@ $username = "root";
 $password = "i-0842ffbbe1c95b180";
 $db_select = "suspo";
 $connect = mysqli_connect($servername ,$username ,$password ,$db_select);
-$action = "SELECT className FROM `Assist_List` WHERE `assistName` LIKE '$name'";
+$action = "SELECT className FROM `Assist_List` WHERE `assistantName` LIKE '$name'";
 $result = mysqli_query($connect, $action);
 
 ?>
