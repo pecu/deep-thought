@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Landing Page - Start Bootstrap Theme</title>
+  <title>Sustainable portfolio</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Sustainable Portfolio</a>
+      <a class="navbar-brand" href="index.php">Sustainable Portfolio</a>
       <!--<a class="btn btn-primary" href="#">Sign In</a>-->
     </div>
   </nav>
@@ -41,13 +41,13 @@
           <h1 class="mb-5">Applying Blockchain to Trace Your Sustainable Portfolio!</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form method="POST"> <!--action="" method = "POST"-->
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
                 <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter your name...">
               </div>
               <div class="col-12 col-md-3">
-                <button type="text" class="btn btn-block btn-lg btn-primary">Go</button>
+                <button type="text" class="btn btn-block btn-lg btn-primary" data-toggle = "collapse" href="#collapsedev">Go</button>
               </div>
             </div>
           </form>
@@ -91,8 +91,13 @@
     </div>
   </section>-->
 
+  <section>
+	<div>
+		hello
+	</div>
+  </section>
   <!-- Image Showcases -->
-  <section class="showcase">
+  <section class="showcase" id="collapsedev">
     <div class="container-fluid p-0">
       <div class="row no-gutters">
 
