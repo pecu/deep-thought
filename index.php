@@ -178,9 +178,11 @@ $result = mysqli_query($connect, $action);
     </div>
 
     <div class="col-2 mx-auto" style="margin-left:0;">
-      <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" href=
+      <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" onclick=
         <?php 
+          echo "\"location.href=\'";
           // print href
+          
           if(isset($ans['ipfsIndex'])) {
             $ipfsIndex = $ans['ipfsIndex'];
             echo "https://ipfs.io/ipfs/"."$ipfsIndex";
@@ -188,6 +190,8 @@ $result = mysqli_query($connect, $action);
           else{
             echo "#"; // unknown ipfs link
           }
+
+          echo "\'\"";
         ?>
       >
         檢視
