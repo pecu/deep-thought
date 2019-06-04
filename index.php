@@ -165,8 +165,9 @@ $result = mysqli_query($connect, $action);
 
         <?php
           // print class name
-          if(isset($ans['className'])){
-            echo "$ans['className']";
+          if(isset($ans['className'])) {
+            $className = $ans['className'];
+            echo "$className";
           }
           else{
             echo "unknown class";
@@ -180,8 +181,9 @@ $result = mysqli_query($connect, $action);
       <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" href=
         <?php 
           // print href
-          if(isset($ans['ipfsIndex'])){
-            echo "https://ipfs.io/ipfs/"."$ans['ipfsIndex']";
+          if(isset($ans['ipfsIndex'])) {
+            $ipfsIndex = $ans['ipfsIndex'];
+            echo "https://ipfs.io/ipfs/"."$ipfsIndex";
           }
           else{
             echo "#"; // unknown ipfs link
