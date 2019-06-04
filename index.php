@@ -87,11 +87,11 @@
 
   <section>
 <?php
-
-$servername = "localhost";
+include 'config.php';
+/*$servername = "localhost";
 $username = "root";
 $password = "i-0842ffbbe1c95b180";
-$db_select = "suspo";
+$db_select = "suspo";*/
 $connect = mysqli_connect($servername ,$username ,$password ,$db_select);
 $action = "";
 
