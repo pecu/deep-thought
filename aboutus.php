@@ -48,6 +48,9 @@
   </style>
   <header class="masthead text-white" style = "padding-top:100px;padding-bottom:100px;">
     <div class="overlay"></div>
+
+    <p class="text-center text-white" style="font-size:5vh; padding-bottom:5vh; color:white;">關於我們</p>
+
     <div class="container-fluid">
 	<div class="row">
 	  <div class="col-3 mx-auto text-center">
