@@ -65,10 +65,12 @@
 	  	<img class="rounded-circle" src="./img/kTMKzGyMc.jpg" width="200px" height="200px">
 	  	<p class="nametext">PECU</p>
 	  	<p>
-	  		PecuLab Founder & Data Science Researcher<br/>
-	  		<a href="http://homepage.ntu.edu.tw/~pecutsai/">Homepage</a>
+	  		PecuLab Founder & Data Science Researcher
 	  		<br/>
-	  		<a href="https://www.peculab.org/">GitHub</a>
+	  		<br/>
+	  		<a href="http://homepage.ntu.edu.tw/~pecutsai/">Homepage</a>
+	  		<br/> <br/>
+	  		<a href="https://www.peculab.org/">PecuLab</a>
 	  	</p>
 	  </div>
 	  <div class="col-0.1">
