@@ -103,9 +103,26 @@ else if( isset($_POST['assistantName'])){
 }
 ?>
 
-<?
-echo "$name";
-?>
+<div class="container" href="result" style="margin-top:5vh;margin-bottom:5vh;">
+  <div class="row">
+
+    <div class="col-2"> </div>
+
+    <div class="col-3 mx-auto">
+      <img src= <?php echo "./img/kTMKzGyMc.jpg" ?> class= "rounded-circle" height="150px" width="150px">
+    </div>
+
+    <div class="col-4 text-center" style=" text-align:center; line-height:150px;">
+      <p style="font-size:8vh; font-weight:bolder;">
+        <?php echo "$name"; ?>
+      </p>
+    </div>
+
+    <div class="col-2"> </div>
+
+  </div>
+</div>
+   
 
 <?php
 
