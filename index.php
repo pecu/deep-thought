@@ -44,7 +44,7 @@
           <form action="#result" method="POST"> <!--action="" method = "POST"-->
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-		<input type="text" name="name" class="form-control form-control-lg" placeholder="Enter student's name...">
+		<input type="text" name="studentName" class="form-control form-control-lg" placeholder="Enter student's name...">
               </div>
               <div class="col-12 col-md-3">
                 <button type="text" class="btn btn-block btn-lg btn-primary" data-toggle = "collapse" href="#collapsedev">Go</button>
@@ -57,7 +57,7 @@
           <form action="searchresultpage/teacher.php" method="POST">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-		<input type="text" name="name" class="form-control form-control-lg" placeholder="Enter teacher's name...">
+		<input type="text" name="teacherName" class="form-control form-control-lg" placeholder="Enter teacher's name...">
               </div>
               <div class="col-12 col-md-3">
                 <button type="text" class="btn btn-block btn-lg btn-primary" data-toggle = "collapse" href="#collapsedev">Go</button>
@@ -72,7 +72,7 @@
           <form action="searchresultpage/assist.php" method="POST"> <!--action="" method = "POST"-->
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-		<input type="text" name="name" class="form-control form-control-lg" placeholder="Enter assistant's name...">
+		<input type="text" name="assistantName" class="form-control form-control-lg" placeholder="Enter assistant's name...">
               </div>
               <div class="col-12 col-md-3">
                 <button type="text" class="btn btn-block btn-lg btn-primary" data-toggle = "collapse" href="#collapsedev">Go</button>
@@ -87,8 +87,24 @@
 
   <section>
 <?php
-$name = $_POST[name];
-echo($name);
+
+if( isset($_POST['studentName']) ){
+  $name = $_POST['studentName'];
+  echo "student $name";
+}
+else if( isset($_POST['teacherName'])){
+  $name = $_POST['teacherName'];
+  echo "teacher $name";
+}
+else if( isset($_POST['assistantName'])){
+  $name = $_POST['assistantName'];
+  echo "assistant $name";
+}
+
+
+
+
+/*$name = $_POST[name];
 echo'<div class="container" href="result" style="margin-top:5vh;margin-bottom:5vh;">
 	<div class="row">
 	  <div class="col-2">
@@ -131,8 +147,8 @@ echo '</p>
 	<div class="col-2">
 	</div>
       </div>
-      </div>';
-?>
+      </div>';*/
+?> 
   </section>
 
   <!-- Image Showcases -->
