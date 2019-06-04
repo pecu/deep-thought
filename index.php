@@ -165,8 +165,12 @@ $result = mysqli_query($connect, $action);
 
         <?php
           // print class name
-          echo "className";
-
+          if(isset($ans['className'])){
+            echo "$ans['className']";
+          }
+          else{
+            echo "unknown class";
+          }
         ?>
 
       </h5>
@@ -176,7 +180,12 @@ $result = mysqli_query($connect, $action);
       <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" href=
         <?php 
           // print href
-          echo"#";
+          if(isset($ans['ipfsIndex'])){
+            echo "https://ipfs.io/ipfs/"."$ans['ipfsIndex']";
+          }
+          else{
+            echo "#"; // unknown ipfs link
+          }
         ?>
       >
         檢視
