@@ -120,8 +120,12 @@ $result = mysqli_query($connect, $action);
 if($haveResult == 1):
   ?>
 
-  <script>
-    window.scrollTo(0, 900);
+	<script>
+	setTimeout(function(){
+	window.scrollTo({ 
+		top: 1000, 
+		behavior: "smooth" 
+	});},2);
   </script>
 
   <?php
