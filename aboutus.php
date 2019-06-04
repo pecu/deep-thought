@@ -68,9 +68,9 @@
 	  		PecuLab Founder & Data Science Researcher
 	  		<br/>
 	  		<br/>
-	  		<a href="http://homepage.ntu.edu.tw/~pecutsai/">Homepage</a>
+	  		<a href="http://homepage.ntu.edu.tw/~pecutsai/" style="color:rgb(78,190,186);">Homepage</a>
 	  		<br/> <br/>
-	  		<a href="https://www.peculab.org/">PecuLab</a>
+	  		<a href="https://www.peculab.org/" style="color:rgb(78,190,186);">PecuLab</a>
 	  	</p>
 	  </div>
 	  <div class="col-0.1">
