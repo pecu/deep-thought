@@ -41,7 +41,7 @@
           <h1 class="mb-5">Applying Blockchain to Trace Your Sustainable Portfolio!</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto" style = "margin: 5px 20px 5px 20px">
-          <form action="#result" method="POST"> <!--action="" method = "POST"-->
+          <form action="result" method="POST"> <!--action="" method = "POST"-->
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
 		<input type="text" name="name" class="form-control form-control-lg" placeholder="Enter student's name...">
@@ -89,7 +89,8 @@
 <?php
 $name = $_POST[name];
 echo($name);
-echo'<div class="container" href="result" style="margin-top:5vh;margin-bottom:5vh;">
+?>
+     <div class="container" href="result" style="margin-top:5vh;margin-bottom:5vh;">
 	<div class="row">
 	  <div class="col-2">
 	  </div>
@@ -97,9 +98,7 @@ echo'<div class="container" href="result" style="margin-top:5vh;margin-bottom:5v
 	    <img src="./img/kTMKzGyMc.jpg" class= "rounded-circle" height="150px" width="150px">
 	  </div>
 	  <div class="col-4 text-center" style=" text-align:center; line-height:150px;">
-	    <p style="font-size:8vh; font-weight:bolder;">';
-echo ($name);
-echo '</p>
+	    <p style="font-size:8vh; font-weight:bolder;">$name</p>
 	  </div>
 	  <div class="col-2">
 	  </div>
@@ -131,8 +130,7 @@ echo '</p>
 	<div class="col-2">
 	</div>
       </div>
-      </div>';
-?>
+    </div>
   </section>
 
   <!-- Image Showcases -->
@@ -224,7 +222,7 @@ echo '</p>
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
             <li class="list-inline-item">
-	      <a href="./aboutus.php">關於我們</a>
+              <a href="#">About</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
