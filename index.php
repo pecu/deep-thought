@@ -118,116 +118,119 @@ $result = mysqli_query($connect, $action);
 
 <?php
 if($haveResult == 1):
+  
   ?>
-
 	<script>
-	setTimeout(function(){
-	window.scrollTo({ 
-		top: 1000, 
-		behavior: "smooth" 
-	});},2);
-  </script>
+		setTimeout(function(){
+		window.scrollTo({ 
+			top: 1000, 
+			behavior: "smooth" 
+		});},2);
+  	</script>
 
+  	<div class="container" href="result" style="margin-top:5vh;margin-bottom:5vh;">
+	  <div class="row">
+
+	    <div class="col-2"> </div>
+
+	    <div class="col-3 mx-auto">
+	      <img src= <?php echo "./img/kTMKzGyMc.jpg" ?> class= "rounded-circle" height="150px" width="150px">
+	    </div>
+
+	    <div class="col-4 text-center" style=" text-align:center; line-height:150px;">
+	      <p style="font-size:8vh; font-weight:bolder;">
+	        <?php echo "$name"; ?>
+	      </p>
+	    </div>
+
+	    <div class="col-2"> </div>
+
+	  </div>
+	</div>
+
+	<div class="container">
+	  <hr>
+
+	  <div class="row">
+
+	    <div class="col-1"> </div>
+
+	    <div class="col-5 mx-auto text-center" style="background-color:rgba(0,0,0,0.1);">
+	      CERTS
+	    </div>
+
+	    <div class="col-2 mx-auto text-center"style="background-color:rgba(0,0,0,0.1);">
+	      證書內容
+	    </div>
+
+	    <div class="col-2"> </div>
+
+	  </div>
+
+	  <?php
+	    while($ans = mysqli_fetch_assoc($result)):
+	  ?>
+
+	  <div class="row">
+	      
+	    <div class="col-1"> </div>
+
+	    <div class="col-5 mx-auto">
+	      <h5 style="margin:2vh;margin-left:0; color:#007bff;">
+
+	        <?php
+	          // print class name
+	          if(isset($ans['className'])) {
+	            $className = $ans['className'];
+	            echo "$className";
+	          }
+	          else{
+	            echo "unknown class";
+	          }
+	        ?>
+
+	      </h5>
+	    </div>
+
+	    <div class="col-2 mx-auto" style="margin-left:0;">
+	      <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" onclick=
+	        <?php 
+	          echo "\"location.href='";
+	          // print href
+
+	          if(isset($ans['ipfsIndex'])) {
+	            $ipfsIndex = $ans['ipfsIndex'];
+	            echo "https://ipfs.io/ipfs/"."$ipfsIndex";
+	          }
+	          else{
+	            echo "#"; // unknown ipfs link
+	          }
+
+	          echo "'\"";
+	        ?>
+	      >
+	        檢視
+	      </button>
+	    </div>
+
+	    <div class="col-2"> </div>
+
+	  </div>
+	    
+
+	  <?php
+	    endwhile;
+	  ?>
+
+	</div>
+  	
   <?php
+
 endif;
 ?>
 
 
-<div class="container" href="result" style="margin-top:5vh;margin-bottom:5vh;">
-  <div class="row">
 
-    <div class="col-2"> </div>
-
-    <div class="col-3 mx-auto">
-      <img src= <?php echo "./img/kTMKzGyMc.jpg" ?> class= "rounded-circle" height="150px" width="150px">
-    </div>
-
-    <div class="col-4 text-center" style=" text-align:center; line-height:150px;">
-      <p style="font-size:8vh; font-weight:bolder;">
-        <?php echo "$name"; ?>
-      </p>
-    </div>
-
-    <div class="col-2"> </div>
-
-  </div>
-</div>
-
-<div class="container">
-  <hr>
-
-  <div class="row">
-
-    <div class="col-1"> </div>
-
-    <div class="col-5 mx-auto text-center" style="background-color:rgba(0,0,0,0.1);">
-      CERTS
-    </div>
-
-    <div class="col-2 mx-auto text-center"style="background-color:rgba(0,0,0,0.1);">
-      證書內容
-    </div>
-
-    <div class="col-2"> </div>
-
-  </div>
-
-  <?php
-    while($ans = mysqli_fetch_assoc($result)):
-  ?>
-
-  <div class="row">
-      
-    <div class="col-1"> </div>
-
-    <div class="col-5 mx-auto">
-      <h5 style="margin:2vh;margin-left:0; color:#007bff;">
-
-        <?php
-          // print class name
-          if(isset($ans['className'])) {
-            $className = $ans['className'];
-            echo "$className";
-          }
-          else{
-            echo "unknown class";
-          }
-        ?>
-
-      </h5>
-    </div>
-
-    <div class="col-2 mx-auto" style="margin-left:0;">
-      <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" onclick=
-        <?php 
-          echo "\"location.href='";
-          // print href
-
-          if(isset($ans['ipfsIndex'])) {
-            $ipfsIndex = $ans['ipfsIndex'];
-            echo "https://ipfs.io/ipfs/"."$ipfsIndex";
-          }
-          else{
-            echo "#"; // unknown ipfs link
-          }
-
-          echo "'\"";
-        ?>
-      >
-        檢視
-      </button>
-    </div>
-
-    <div class="col-2"> </div>
-
-  </div>
-    
-
-  <?php
-    endwhile;
-  ?>
-
-</div>
    
   </section>
 
