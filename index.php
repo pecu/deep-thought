@@ -193,9 +193,10 @@ if($haveResult == 1):
 	    </div>
 
 	    <div class="col-2 mx-auto" style="margin-left:0;">
-	      <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" onclick=
+	      <!--<button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" onclick=>-->
+        <a href="#myModal" role="button" class="btn btn-block center btn-primary" style="margin-top:8%;" data-toggle="modal">檢視</a>
 	        <?php 
-	          echo "\"location.href='";
+	          /*echo "\"location.href='";
 	          // print href
 
 	          if(isset($ans['ipfsIndex'])) {
@@ -206,33 +207,45 @@ if($haveResult == 1):
 	            echo "#"; // unknown ipfs link
 	          }
 
-	          echo "'\"";
+	          echo "'\"";*/
 	        ?>
-	      >
-	        檢視
 	      </button>
 	    </div>
 
 	    <div class="col-2"> </div>
-
 	  </div>
-	    
-
-	  <?php
-	    endwhile;
-	  ?>
 
 	</div>
-  	
+    <div id="myModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog" style="margin-left:19%;">
+            <div class="modal-content" style="width:800px;">
+                <?php
+                  if(isset($ans['ipfsIndex'])) {
+                    $ipfsIndex = $ans['ipfsIndex'];
+                    echo '<object data="ipfs-img/'.$ipfsIndex.'.pdf" type="application/pdf" width="890px" height="630px">
+                    <embed src="ipfs-img/'.$ipfsIndex.'" type="application/pdf" />
+                  </object>';
+                  }
+                  else{
+                    echo "#"; // unknown ipfs link
+                  }
+                  /*if(isset($ans['ipfsIndex'])) {
+                    $ipfsIndex = $ans['ipfsIndex'];
+                    echo "<embed src = 'https://ipfs.io/ipfs/"."$ipfsIndex".">";
+                  }*/
+                ?>
+            </div>
+        </div>
+    </div>
+  </section>
+  <?php
+	    endwhile;
+	?>
+    	
   <?php
 
-endif;
-?>
-
-
-
-   
-  </section>
+  endif;
+  ?>
 
   <!-- Image Showcases -->
   <!--<section class="showcase" id="collapsedev">
@@ -315,7 +328,11 @@ endif;
       </div>
     </div>
   </section>-->
-
+  <section>
+  <!-- Button trigger modal -->
+  <div>
+  </div>
+  </section>
   <!-- Footer -->
   <footer class="footer bg-light">
     <div class="container">
@@ -364,8 +381,8 @@ endif;
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <!--<script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   
 </body>
 
