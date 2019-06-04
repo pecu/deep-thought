@@ -85,7 +85,7 @@
     </div>
   </header>
 
-  <section>
+<section>
 <?php
 include 'config.php';
 /*$servername = "localhost";
@@ -237,10 +237,11 @@ if($haveResult == 1):
             </div>
         </div>
     </div>
-  </section>
-  <?php
+    <?php
 	    endwhile;
 	?>
+  </section>
+  
     	
   <?php
 
