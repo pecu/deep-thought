@@ -214,9 +214,7 @@ if($haveResult == 1):
 
 	    <div class="col-2"> </div>
 	  </div>
-
-	</div>
-    <div id="myModal" class="modal fade" tabindex="-1">
+	  <div id="myModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog" style="margin-left:19%;">
             <div class="modal-content" style="width:800px;">
                 <?php
@@ -240,6 +238,9 @@ if($haveResult == 1):
     <?php
 	    endwhile;
 	?>
+
+	</div>
+
   </section>
   
     	
