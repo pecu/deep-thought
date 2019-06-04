@@ -196,7 +196,7 @@ endif;
     <div class="col-2 mx-auto" style="margin-left:0;">
       <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" onclick=
         <?php 
-          echo "\"location.href=\'";
+          echo "\"location.href='";
           // print href
 
           if(isset($ans['ipfsIndex'])) {
@@ -207,7 +207,7 @@ endif;
             echo "#"; // unknown ipfs link
           }
 
-          echo "\'\"";
+          echo "'\"";
         ?>
       >
         檢視
