@@ -62,19 +62,21 @@
 	  	<hr class="hrvertical">
 	  </div>
 	  <div class="col-4 text-center mx-auto">
+	  	<img class="rounded-circle" src="./img/kTMKzGyMc.jpg" width="200px" height="200px">
 	  	<p class="nametext">PECU</p>
 	  	<p>
 	  		PecuLab Founder & Data Science Researcher<br/>
-	  		<a href="http://homepage.ntu.edu.tw/~pecutsai/"></a>
-	  		<a href="https://www.peculab.org/"></a>
+	  		<a href="http://homepage.ntu.edu.tw/~pecutsai/">homepage</a>
+	  		<a href="https://www.peculab.org/">github</a>
 	  	</p>
 	  </div>
 	  <div class="col-0.1">
 	  	<hr class="hrvertical">
 	  </div>
 	  <div class="col-3 text-center mx-auto">
+	  	<img class="rounded-circle" src="./img/kTMKzGyMc.jpg" width="200px" height="200px">
 		<p class="nametext">虞樸</p>
-		<p>hi</p>
+		<p>Hi，我就讀交通大學資工系二年級，最近半年剛踏入網頁與系統開發的泥沼中，為了累積更多實務經驗和進一步了解區塊鍊如何實際被運用參加了這個專案，希望能開發出一套reliable的系統，幫廣大的用戶和他們理想的工作鍊起來。</p>
 	  </div> 
 	</div>
     </div>
