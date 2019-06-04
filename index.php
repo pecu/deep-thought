@@ -88,19 +88,29 @@
   <section>
 <?php
 
+$servername = "localhost";
+$username = "root";
+$password = "i-0842ffbbe1c95b180";
+$db_select = "suspo";
+$connect = mysqli_connect($servername ,$username ,$password ,$db_select);
+
 if( isset($_POST['studentName']) ){
   $name = $_POST['studentName'];
-  echo "student $name";
-
+  $type = 0;
+  $action = "SELECT * FROM `Pass_List` WHERE `studentName` LIKE '$name'";
 }
 else if( isset($_POST['teacherName'])){
   $name = $_POST['teacherName'];
-  echo "teacher $name";
+  $type = 1;
+  $action = "SELECT className FROM `Teach_List` WHERE `teacherName` LIKE '$name'";
 }
 else if( isset($_POST['assistantName'])){
   $name = $_POST['assistantName'];
-  echo "assistant $name";
+  $type = 2;
+  $action = "SELECT className FROM `Assist_List` WHERE `assistantName` LIKE '$name'";
 }
+
+$result = mysqli_query($connect, $action);
 ?>
 
 <div class="container" href="result" style="margin-top:5vh;margin-bottom:5vh;">
@@ -142,57 +152,48 @@ else if( isset($_POST['assistantName'])){
 
   </div>
 
+  <?php
+    while($ans = mysqli_fetch_assoc($result)):
+  ?>
+
   <div class="row">
-    
+      
     <div class="col-1"> </div>
 
     <div class="col-5 mx-auto">
-      <h5 style="margin:2vh;margin-left:0; color:#007bff;">進階軟體開發專題（CSX5001）</h5>
+      <h5 style="margin:2vh;margin-left:0; color:#007bff;">
+
+        <?php
+          // print class name
+          echo "className";
+
+        ?>
+
+      </h5>
     </div>
 
     <div class="col-2 mx-auto" style="margin-left:0;">
-      <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" href="#">
+      <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" href=
+        <?php 
+          // print href
+          echo"#";
+        ?>
+      >
         檢視
       </button>
     </div>
 
-  <div class="col-2"> </div>
+    <div class="col-2"> </div>
 
   </div>
+    
+
+  <?php
+    endwhile;
+  ?>
 
 </div>
    
-
-<?php
-/*
-    <div class="container">
-      <hr>
-      <div class="row">
-	<div class="col-1">
-	</div>
-	<div class="col-5 mx-auto text-center" style="background-color:rgba(0,0,0,0.1);">
-	CERTS
-	</div>
-	<div class="col-2 mx-auto text-center"style="background-color:rgba(0,0,0,0.1);">
-	證書內容
-	</div>
-	<div class="col-2">
-	</div>
-      </div>
-      <div class="row">
-        <div class="col-1">
-	</div>
-	<div class="col-5 mx-auto">
-		<h5 style="margin:2vh;margin-left:0; color:#007bff;">進階軟體開發專題（CSX5001）</h5>
-	</div>
-	<div class="col-2 mx-auto" style="margin-left:0;">
-	  <button type="text" class="btn btn-block btn-primary center" style="margin-top:8%;" href="#">檢視</button>
-	</div>
-	<div class="col-2">
-	</div>
-      </div>
-      </div>';*/
-?> 
   </section>
 
   <!-- Image Showcases -->
