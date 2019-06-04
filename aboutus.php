@@ -60,12 +60,18 @@
 	  </div>
 	  <div class="col-4 text-center mx-auto">
 	  	<p class="nametext">PECU</p>
+	  	<p>
+	  		PecuLab Founder & Data Science Researcher<br/>
+	  		<a href="http://homepage.ntu.edu.tw/~pecutsai/"></a>
+	  		<a href="https://www.peculab.org/"></a>
+	  	</p>
 	  </div>
 	  <div class="col-0.1">
 	  	<hr class="hrvertical">
 	  </div>
 	  <div class="col-3 text-center mx-auto">
 		<p class="nametext">虞樸</p>
+		<p>hi</p>
 	  </div> 
 	</div>
     </div>
