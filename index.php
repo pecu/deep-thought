@@ -93,25 +93,41 @@ $username = "root";
 $password = "i-0842ffbbe1c95b180";
 $db_select = "suspo";
 $connect = mysqli_connect($servername ,$username ,$password ,$db_select);
+$action = "";
+
+$haveResult = 0;
 
 if( isset($_POST['studentName']) ){
   $name = $_POST['studentName'];
-  $type = 0;
+  $haveResult = 1;
   $action = "SELECT * FROM `Pass_List` WHERE `studentName` LIKE '$name'";
 }
 else if( isset($_POST['teacherName'])){
   $name = $_POST['teacherName'];
-  $type = 1;
+  $haveResult = 1;
   $action = "SELECT className FROM `Teach_List` WHERE `teacherName` LIKE '$name'";
 }
 else if( isset($_POST['assistantName'])){
   $name = $_POST['assistantName'];
-  $type = 2;
+  $haveResult = 1;
   $action = "SELECT className FROM `Assist_List` WHERE `assistantName` LIKE '$name'";
 }
 
 $result = mysqli_query($connect, $action);
 ?>
+
+<?php
+if($haveResult == 1):
+  ?>
+
+  <script>
+    window.scrollTo(0, 900);
+  </script>
+
+  <?php
+endif;
+?>
+
 
 <div class="container" href="result" style="margin-top:5vh;margin-bottom:5vh;">
   <div class="row">
@@ -182,7 +198,7 @@ $result = mysqli_query($connect, $action);
         <?php 
           echo "\"location.href=\'";
           // print href
-          
+
           if(isset($ans['ipfsIndex'])) {
             $ipfsIndex = $ans['ipfsIndex'];
             echo "https://ipfs.io/ipfs/"."$ipfsIndex";
