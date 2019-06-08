@@ -21,7 +21,6 @@
   <!-- Custom styles for this template -->
   <link href="css/landing-page.min.css" rel="stylesheet">
 </head>
-
 <body>
 
   <!-- Navigation -->
@@ -29,6 +28,7 @@
     <div class="container">
       <a class="navbar-brand" href="index.php">Sustainable Portfolio</a>
       <!--<a class="btn btn-primary" href="#">Sign In</a>-->
+      <a class="navbar adminbut" href="./admin/login.php">I'm an admin→</a>
     </div>
   </nav>
 
@@ -43,8 +43,13 @@
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto" style = "margin: 5px 20px 5px 20px">
           <form action="#result" method="POST"> <!--action="" method = "POST"-->
             <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-		<input type="text" name="studentName" class="form-control form-control-lg" placeholder="Enter student's name...">
+              <select class="col-3 col-md-2" name="object" style="font-size:1.4vw;">
+                <option value="studentName">學生</option>
+                <option value="teacherName">老師</option>
+                <option value="assistantName">助教</option>
+              </select>
+              <div class="col-9 col-md-7 mb-2 mb-md-0">
+	            	<input type="text" name="studentName" class="form-control form-control-lg" placeholder="Enter student's name...">
               </div>
               <div class="col-12 col-md-3">
                 <button type="text" class="btn btn-block btn-lg btn-primary" data-toggle = "collapse" href="#collapsedev">Go</button>

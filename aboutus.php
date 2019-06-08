@@ -56,7 +56,7 @@
 	  <div class="col-3 mx-auto text-center">
 		<img class="rounded-circle" src="./img/kTMKzGyMc.jpg" width="200px" height="200px">
 		<p class="nametext">曾琮傑</p>
-		<p>現在就讀政治大學企業管理學系，有過幾次開發Dapp與網站的經驗。因緣際會下因為<a style="font-size:3vh; color:rgb(78,190,186);" href="https://www.facebook.com/profile.php?id=100000395222019">帥氣助教徐子修</a>的介紹加入這個專案的開發，希望大家能在區塊鏈深耕，也期待大家認識交流交流:P</p>
+		<p>現在就讀政治大學企業管理學系<br>有過幾次開發Dapp與網站的經驗<br>因為<a style="font-size:3vh; color:rgb(78,190,186);" href="https://www.facebook.com/profile.php?id=100000395222019">帥氣助教徐子修</a><br>的介紹加入這個專案的開發<br>希望大家能在區塊鏈深耕<br>也期待大家認識交流交流:P</p>
 	  </div>
 	  <div class="col-0.1">
 	  	<hr class="hrvertical">
