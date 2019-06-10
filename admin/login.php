@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>Admin Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -23,9 +23,8 @@
 <body>
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="index.php">Sustainable Portfolio</a>
+      <a class="navbar-brand" href="../index.php">Sustainable Portfolio</a>
       <!--<a class="btn btn-primary" href="#">Sign In</a>-->
-      <a class="navbar adminbut" href="./admin/login.php">I'm an admin→</a>
     </div>
   </nav>
   <style>
@@ -63,7 +62,7 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                    <a href="index.php" class="btn btn-primary btn-user btn-block">
                       Login
                     </a>
                 </div>
