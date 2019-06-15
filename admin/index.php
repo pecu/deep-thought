@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
   <meta charset="utf-8">
@@ -21,6 +20,16 @@
 </head>
 
 <body>
+<?php
+session_start();
+if(!$_SESSION['username'] || !$_SESSION['password']){
+  $url = "login.php";
+  echo "<script type='text/javascript'>";
+  echo "window.location.href='$url'";
+  echo "</script>"; 
+}
+session_destroy();
+?>
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="../index.php">Sustainable Portfolio</a>

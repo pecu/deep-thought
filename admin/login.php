@@ -31,6 +31,16 @@
   body{
     background: url("../img/bg-masthead.jpg") no-repeat center center;
   }
+  .signup{
+    background-color:#FF7744;
+    border: #FF0000;
+  }
+  .signup :hover{
+    background-color:#FF5511 !important;
+  }
+  *{
+    transition: all 1s;
+  }
   </style>
   <div class="container">
 
@@ -43,28 +53,77 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
+              <div id="sign_part" class="col-lg-9" hidden>
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Register!</h1>
+                  </div>
+                  <form action="" class="user" method="POST">
+                    <div class="form-group">
+                      <input type="text" name="RegisterName" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" name="RegisterMail" class="form-control form-control-user" id="exampleInputPassword" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" name="RegisterPassword" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" name="VerifyPassword" class="form-control form-control-user" id="exampleInputPassword" placeholder="Verify Password">
+                    </div>
+                    <button type="submit" class="btn btn-block btn-lg btn-primary">Submit!</button>
+                  </form>
+                </div>
+              </div>
               <div class="col-lg-3 d-none d-lg-block bg-login-image"></div>
-              <div class="col-lg-9">
+              <div id="login_part" class="col-lg-9">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
-                  <form class="user">
+                  <form action="" class="user" method="POST">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"  style="padding-top:1.6vh !important;">
                       <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input" id="customCheck">
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <a href="index.php" class="btn btn-primary btn-user btn-block">
+                    <button type="submit" class="btn btn-block btn-lg btn-primary">Login!</button>
+                    <a href="#signup" class="btn btn-block btn-lg btn-primary signupbut" style="background-color:#FF5511; border:#FF0000; ">Sign up!</a>
+                    <!--<a class="btn btn-primary btn-user btn-block">
                       Login
-                    </a>
+                    </a>-->
+                    <?php
+                    include '../config.php';
+                    session_start();
+                    $count = 0;
+                    $connect = mysqli_connect($servername ,$username ,$password ,$db_select);
+                    if(isset($_POST['username']) && isset($_POST['password'])){
+                      $userid = $_POST['username'];
+                      $userpass = $_POST['password'];
+                      $action = "SELECT * FROM `admin_list` WHERE `Account` LIKE '$userid' AND `password` LIKE '$userpass' ORDER BY `password` ASC";
+                      $result = mysqli_query($connect, $action);
+                      $ans = mysqli_fetch_assoc($result);
+                      if($ans){
+                        $_SESSION['username'] = $ans['Account'];
+                        $_SESSION['password'] = $ans['password'];
+                        /*echo "<script>alert('success')</script>";*/
+                        $url = "index.php";
+                        echo "<script type='text/javascript'>";
+                        echo "window.location.href='$url'";
+                        echo "</script>"; 
+                      }else{
+                        echo "<script>alert('Wrong username or password!')</script>";
+                      }
+                    }
+                    ?>
+                  </form>
                 </div>
               </div>
             </div>
