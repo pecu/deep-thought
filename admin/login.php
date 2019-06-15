@@ -21,6 +21,13 @@
 </head>
 
 <body>
+<?php
+session_destroy();
+session_start();
+include '../config.php';
+$count = 0;
+$connect = mysqli_connect($servername ,$username ,$password ,$db_select);
+?>
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="../index.php">Sustainable Portfolio</a>
@@ -38,9 +45,9 @@
   .signup :hover{
     background-color:#FF5511 !important;
   }
-  *{
+  /**{
     transition: all 1s;
-  }
+  }*/
   </style>
   <div class="container">
 
@@ -100,24 +107,22 @@
                       Login
                     </a>-->
                     <?php
-                    include '../config.php';
-                    session_start();
-                    $count = 0;
-                    $connect = mysqli_connect($servername ,$username ,$password ,$db_select);
                     if(isset($_POST['username']) && isset($_POST['password'])){
                       $userid = $_POST['username'];
                       $userpass = $_POST['password'];
                       $action = "SELECT * FROM `admin_list` WHERE `Account` LIKE '$userid' AND `password` LIKE '$userpass' ORDER BY `password` ASC";
                       $result = mysqli_query($connect, $action);
                       $ans = mysqli_fetch_assoc($result);
+                      $_SESSION['username'] = '';
+                      $_SESSION['password'] = '';
                       if($ans){
                         $_SESSION['username'] = $ans['Account'];
                         $_SESSION['password'] = $ans['password'];
-                        /*echo "<script>alert('success')</script>";*/
+                        #echo "<script>alert('success')</script>";
                         $url = "index.php";
                         echo "<script type='text/javascript'>";
                         echo "window.location.href='$url'";
-                        echo "</script>"; 
+                        echo "</script>";
                       }else{
                         echo "<script>alert('Wrong username or password!')</script>";
                       }

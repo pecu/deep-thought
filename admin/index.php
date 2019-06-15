@@ -24,6 +24,7 @@
 session_start();
 if(!$_SESSION['username'] || !$_SESSION['password']){
   $url = "login.php";
+  session_destroy();
   echo "<script type='text/javascript'>";
   echo "window.location.href='$url'";
   echo "</script>"; 
