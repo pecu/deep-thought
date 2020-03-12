@@ -8,7 +8,7 @@
 $ sudo apt-get install software-preperties-common
 $ sudo add-apt-repository -y ppa:ethereum/ethereum
 $ sudo apt-get update
-$ sudo apt-get isntall ethereum
+$ sudo apt-get install ethereum
 
 ```
 3. Mac OS 環境的人，安裝完 homebrew 後，透過以下指令安裝 geth
