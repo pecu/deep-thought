@@ -5,7 +5,7 @@
 1. 使用 Windows 的同學安裝 Ubuntu 環境，可以參考 [link](https://blog.yowko.com/windows-10-enable-linux-bash/)
 2. Ubuntu 環境的人 (包括 Windows 上的)，透過以下指令安裝 geth
 ```
-$ sudo apt-get install software-preperties-common
+$ sudo apt-get install software-properties-common
 $ sudo add-apt-repository -y ppa:ethereum/ethereum
 $ sudo apt-get update
 $ sudo apt-get install ethereum
