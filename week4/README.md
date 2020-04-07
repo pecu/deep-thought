@@ -19,7 +19,7 @@ function withdraw(金額)
 //實現的是銀行內部轉帳，也就是說如果轉帳成功balances的目標地址會增加轉帳金額
 function transfer(轉帳金額, 目標地址)
 
-//從balances回傳使用者的帳戶餘額
+//從balances回傳使用者的銀行帳戶餘額
 function getBalance()
 
 //回傳銀行合約的所有餘額，設定為只有owner才能呼叫成功
