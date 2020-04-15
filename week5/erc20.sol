@@ -33,8 +33,8 @@ interface ERC20Interface {
     event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 }
 
-abstract contract ApproveAndCallFallBack {
-    function receiveApproval(address sender, uint256 tokens, address token, bytes memory data) public virtual;
+interface ApproveAndCallFallBack {
+    function receiveApproval(address sender, uint256 tokens, address tokenAdd, bytes calldata data) external;
 }
  
 contract Owned {
@@ -64,17 +64,7 @@ contract Owned {
     }
 }
 
-contract shop is ApproveAndCallFallBack {
-    mapping(address => uint256) public test;
-    mapping(address => bytes) public test2;
-    
-    function receiveApproval(address sender, uint256 tokens, address token, bytes memory data) public override {
-        test[sender] = tokens;
-        test2[token] = data;
-    }
-}
-
-contract ColdStoneCoin is ERC20Interface, Owned {
+contract ShopCoinDemo is ERC20Interface, Owned {
     using SafeMath for uint;
  
     string public symbol;
@@ -86,12 +76,12 @@ contract ColdStoneCoin is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
  
     constructor() public {
-        symbol = "CSC";
-        name = "酷聖石";
+        symbol = "SCD";
+        name = "ShopCoinDemo";
         decimals = 3;
         _totalSupply = 10000 * 10 ** uint(decimals);
-        balances[0x74C530cf712407F32E218B4d4e72f58597896a95] = _totalSupply;
-        emit Transfer(address(0), 0x74C530cf712407F32E218B4d4e72f58597896a95, _totalSupply);
+        balances[msg.sender] = _totalSupply;
+        emit Transfer(address(0), msg.sender, _totalSupply);
     }
  
     function totalSupply() public override view returns (uint) {
@@ -115,11 +105,11 @@ contract ColdStoneCoin is ERC20Interface, Owned {
         return true;
     }
  
-    function transferFrom(address from, address to, uint tokens) public override returns (bool success) {
-        balances[from] = balances[from].sub(tokens);
-        allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
+    function transferFrom(address _from, address to, uint tokens) public override returns (bool success) {
+        balances[_from] = balances[_from].sub(tokens);
+        allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(tokens);
         balances[to] = balances[to].add(tokens);
-        emit Transfer(from, to, tokens);
+        emit Transfer(_from, to, tokens);
         return true;
     }
  
@@ -127,7 +117,7 @@ contract ColdStoneCoin is ERC20Interface, Owned {
         return allowed[tokenOwner][spender];
     }
  
-    function approveAndCall(address spender, uint tokens, bytes memory data) public returns (bool success) {
+    function approveAndCall(address spender, uint256 tokens, bytes memory data) public returns (bool success) {
         approve(spender, tokens);
         ApproveAndCallFallBack(spender).receiveApproval(msg.sender, tokens, address(this), data);
         return true;
@@ -136,4 +126,27 @@ contract ColdStoneCoin is ERC20Interface, Owned {
     fallback () external {
         revert();
     }
+}
+
+contract Shop {
+    mapping(address => uint) public buyerList;
+    uint256 price = 10;
+    
+    function receiveApproval(address sender, uint256 tokens, address tokenAdd, bytes memory data) public returns (address, uint256, address, bytes memory){
+        require(msg.sender == tokenAdd, "Error token contract address");
+        buy(sender, tokens, tokenAdd);
+        return (sender, tokens, tokenAdd, data);
+    }
+    
+    function buy(address buyer, uint256 tokens, address tokenAdd) private {
+        require(tokens >= price, "Value is not enougth");
+        uint256 amount = tokens / price;
+        getTokenFrom(tx.origin, tokens, tokenAdd);
+        buyerList[buyer] += amount;
+    }
+    
+    function getTokenFrom(address tokenFrom, uint256 tokenAmount, address tokenAdd) private {
+        ShopCoinDemo(tokenAdd).transferFrom(address(tokenFrom), address(this), tokenAmount);
+    }
+    
 }
